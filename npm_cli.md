@@ -131,6 +131,6 @@ CLI_PGR/
   - สร้างไฟล์ `.gitignore` เพื่อจำกัดไฟล์ชั่วคราวและโฟลเดอร์ที่ไม่จำเป็น (`node_modules/`, `dist/`)
   - เริ่มต้น Git Repository ในโฟลเดอร์ `CLI_PGR` และสั่ง Push โค้ดทั้งหมดขึ้นสู่ Branch `main` บน GitHub สำเร็จ
 - [/] **ขั้นตอนที่กำลังดำเนินการและแผนงานถัดไป**
-  - [ ] เพิ่ม `NPM_TOKEN` ใน GitHub Secrets ของ Repository ([Link ตั้งค่า](https://github.com/PATJUNGgh/PYGRASSREAL-CLI/settings/secrets/actions))
+  - [x] เพิ่ม `NPM_TOKEN` ใน GitHub Secrets ของ Repository เรียบร้อยแล้ว
   - [x] สรุปประเภทใบอนุญาตใช้งาน (License) เพื่อสร้างไฟล์ `LICENSE` ในเครื่องและแก้ไขสิทธิ์ใน `package.json` (เลือกเป็น MIT License ภายใต้ชื่อลิขสิทธิ์ PYGRASSREAL-CLI เรียบร้อย)
   - [ ] อัปเดตและรันคำสั่งเผยแพร่ผ่านการสร้าง Git Tag เพื่อสั่งรัน GitHub Actions (`publish.yml`) ไปยัง npm
