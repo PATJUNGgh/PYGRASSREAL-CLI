@@ -116,3 +116,21 @@ CLI_PGR/
 ---
 > [!TIP]
 > ในการพัฒนาเบื้องต้น เราควรใช้ **Supabase Client JS** ร่วมกับ Edge Functions ของ Supabase เพื่อรองรับการอัปโหลดไฟล์ขนาดใหญ่และความปลอดภัยในการทำ Auth ของนักพัฒนา
+
+---
+
+## 7. บันทึกสถานะและความคืบหน้าการดำเนินงาน (Current Progress Logs)
+
+**อัปเดตล่าสุดเมื่อวันที่: 2026-06-26**
+
+- [x] **สร้างและตั้งค่า npm Access Token**
+  - สร้าง Granular Access Token ชื่อ `github-actions-pgr-cli` พร้อมสิทธิ์ `Read and write` สำหรับ `All packages` และเปิดการ `Bypass 2FA` สำหรับใช้ในระบบ CI/CD เรียบร้อยแล้ว
+- [x] **สร้าง GitHub Repository แยกสำหรับ CLI**
+  - สร้าง Repository ใหม่ชื่อ `PYGRASSREAL-CLI` บนบัญชีของคุณ ([PATJUNGgh/PYGRASSREAL-CLI](https://github.com/PATJUNGgh/PYGRASSREAL-CLI))
+- [x] **ตั้งค่า Git Local และอัปโหลดโค้ด**
+  - สร้างไฟล์ `.gitignore` เพื่อจำกัดไฟล์ชั่วคราวและโฟลเดอร์ที่ไม่จำเป็น (`node_modules/`, `dist/`)
+  - เริ่มต้น Git Repository ในโฟลเดอร์ `CLI_PGR` และสั่ง Push โค้ดทั้งหมดขึ้นสู่ Branch `main` บน GitHub สำเร็จ
+- [/] **ขั้นตอนที่กำลังดำเนินการและแผนงานถัดไป**
+  - [ ] เพิ่ม `NPM_TOKEN` ใน GitHub Secrets ของ Repository ([Link ตั้งค่า](https://github.com/PATJUNGgh/PYGRASSREAL-CLI/settings/secrets/actions))
+  - [x] สรุปประเภทใบอนุญาตใช้งาน (License) เพื่อสร้างไฟล์ `LICENSE` ในเครื่องและแก้ไขสิทธิ์ใน `package.json` (เลือกเป็น MIT License ภายใต้ชื่อลิขสิทธิ์ PYGRASSREAL-CLI เรียบร้อย)
+  - [ ] อัปเดตและรันคำสั่งเผยแพร่ผ่านการสร้าง Git Tag เพื่อสั่งรัน GitHub Actions (`publish.yml`) ไปยัง npm
