@@ -1,0 +1,30 @@
+name: Publish npm Package
+
+on:
+  push:
+    tags:
+      - 'v*' # ทำงานเฉพาะเมื่อมีการสร้างและ push git tag ใหม่ เช่น v1.0.0
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install Dependencies
+        run: npm ci || npm install # ตรวจสอบและติดตั้ง npm modules
+
+      - name: Build TypeScript CLI
+        run: npm run build # ทำความสะอาดโฟลเดอร์ dist และคอมไพล์ TypeScript
+
+      - name: Publish to npm registry
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # นำค่า secret token จาก GitHub Repository มายืนยันสิทธิ์กับ npm
