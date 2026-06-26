@@ -22,7 +22,7 @@
     "cli"
   ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "archiver": "^7.0.1",
     "axios": "^1.7.2",
